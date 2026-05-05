@@ -25,9 +25,14 @@ jobs:
           node-version: 20
           cache: npm
 
+      - uses: actions/configure-pages@v5
+
       - run: npm ci
 
       - run: npm run build
+
+      - name: out 폴더 내용 확인
+        run: ls -la out/ && echo "index.html 존재:" && test -f out/index.html && echo "YES" || echo "NO"
 
       - uses: actions/upload-pages-artifact@v3
         with:
