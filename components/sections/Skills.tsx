@@ -3,8 +3,67 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { skillCategories } from "@/data/portfolio";
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiReactquery,
+  SiNestjs,
+  SiNodedotjs,
+  SiExpress,
+  SiPrisma,
+  SiPostgresql,
+  SiRedis,
+  SiMysql,
+  SiMariadb,
+  SiDocker,
+  SiAnthropic,
+  SiSocketdotio,
+  SiGithubactions,
+} from "react-icons/si";
+import { FaAws } from "react-icons/fa";
+import type { IconType } from "react-icons";
+
+const skillIconMap: Record<string, { icon: IconType; color: string }> = {
+  "Next.js":         { icon: SiNextdotjs,     color: "#ffffff" },
+  "React":           { icon: SiReact,          color: "#61DAFB" },
+  "TypeScript":      { icon: SiTypescript,     color: "#3178C6" },
+  "Tailwind CSS":    { icon: SiTailwindcss,    color: "#06B6D4" },
+  "TanStack Query":  { icon: SiReactquery,     color: "#FF4154" },
+  "NestJS":          { icon: SiNestjs,         color: "#E0234E" },
+  "Node.js":         { icon: SiNodedotjs,      color: "#68A063" },
+  "Express":         { icon: SiExpress,        color: "#aaaaaa" },
+  "Prisma":          { icon: SiPrisma,         color: "#a5b4fc" },
+  "PostgreSQL":      { icon: SiPostgresql,     color: "#699ECA" },
+  "Redis":           { icon: SiRedis,          color: "#FF6B6B" },
+  "MySQL":           { icon: SiMysql,          color: "#5B8FBD" },
+  "MariaDB":         { icon: SiMariadb,        color: "#C0765A" },
+  "Docker":          { icon: SiDocker,         color: "#2496ED" },
+  "AWS S3":          { icon: FaAws,            color: "#FF9900" },
+  "Claude API":      { icon: SiAnthropic,      color: "#D4A27F" },
+  "Socket.io":       { icon: SiSocketdotio,    color: "#aaaaaa" },
+  "GitHub Actions CI/CD": { icon: SiGithubactions, color: "#2088FF" },
+};
+
+function SkillItem({ name }: { name: string }) {
+  const info = skillIconMap[name];
+  const Icon = info?.icon;
+
+  return (
+    <div className="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-background/60 border border-border/40 hover:border-primary/20 transition-colors group">
+      {Icon ? (
+        <Icon size={18} color={info.color} className="flex-shrink-0" />
+      ) : (
+        <span className="w-[18px] h-[18px] rounded-sm bg-primary/20 flex-shrink-0" />
+      )}
+      <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap">
+        {name}
+      </span>
+    </div>
+  );
+}
 
 export default function Skills() {
   const ref = useRef(null);
@@ -36,15 +95,9 @@ export default function Skills() {
                     </h3>
                   </CardHeader>
                   <CardContent className="px-5 pb-5">
-                    <div className="flex flex-wrap gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                       {category.skills.map((skill) => (
-                        <Badge
-                          key={skill}
-                          variant="secondary"
-                          className="text-sm font-normal bg-secondary text-muted-foreground hover:bg-primary/10 hover:text-primary hover:border-primary/30 border border-transparent transition-colors cursor-default"
-                        >
-                          {skill}
-                        </Badge>
+                        <SkillItem key={skill} name={skill} />
                       ))}
                     </div>
                   </CardContent>

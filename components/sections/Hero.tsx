@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { personalInfo } from "@/data/portfolio";
@@ -43,60 +44,94 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-16"
     >
-      <motion.div
-        className="text-center max-w-3xl"
-        initial={{ opacity: 0, y: 32 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        <p className="font-mono text-sm text-primary mb-4 tracking-wider">
-          안녕하세요, 저는
-        </p>
+      <div className="max-w-5xl w-full mx-auto">
+        <div className="flex flex-col-reverse items-center gap-12 lg:flex-row lg:items-center lg:justify-between">
 
-        <h1 className="text-6xl sm:text-8xl font-bold text-foreground mb-4 tracking-tight">
-          {personalInfo.name}
-        </h1>
+          {/* 텍스트 영역 */}
+          <motion.div
+            className="flex-1 text-center lg:text-left"
+            initial={{ opacity: 0, y: 32 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <p className="font-mono text-sm text-primary mb-3 tracking-wider">
+              안녕하세요, 저는
+            </p>
 
-        <div className="text-2xl sm:text-3xl font-medium text-muted-foreground mb-8 min-h-[2.5rem] flex items-center justify-center gap-0.5">
-          <span>{displayed}</span>
-          <span className="inline-block w-0.5 h-7 bg-primary ml-0.5 animate-pulse" />
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-3 tracking-tight">
+              {personalInfo.name}
+            </h1>
+
+            <div className="text-xl sm:text-2xl font-medium text-muted-foreground mb-6 min-h-[2rem] flex items-center justify-center lg:justify-start gap-0.5">
+              <span>{displayed}</span>
+              <span className="inline-block w-0.5 h-6 bg-primary ml-0.5 animate-pulse" />
+            </div>
+
+            <p className="text-muted-foreground text-base leading-relaxed mb-8 whitespace-pre-line max-w-md mx-auto lg:mx-0">
+              {personalInfo.bio}
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+              <a
+                href="#projects"
+                className={cn(buttonVariants({ size: "lg" }), "rounded-full font-medium")}
+              >
+                프로젝트 보기
+              </a>
+              <a
+                href="#contact"
+                className={cn(
+                  buttonVariants({ variant: "outline", size: "lg" }),
+                  "rounded-full font-medium border-border text-muted-foreground hover:text-foreground"
+                )}
+              >
+                연락하기
+              </a>
+              <a
+                href={personalInfo.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "lg" }),
+                  "rounded-full font-medium text-muted-foreground hover:text-foreground gap-2"
+                )}
+              >
+                <GitHubIcon />
+                GitHub
+              </a>
+            </div>
+          </motion.div>
+
+          {/* 프로필 사진 */}
+          <motion.div
+            className="flex-shrink-0"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          >
+            <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-72 lg:h-72">
+              {/* 외부 글로우 링 */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-violet-500/20 blur-xl scale-110" />
+              {/* 인디고 링 */}
+              <div className="absolute inset-0 rounded-full ring-2 ring-primary/40 z-10" />
+              {/* 사진 */}
+              <div className="relative w-full h-full rounded-full overflow-hidden">
+                <Image
+                  src="/IMG_6841.jpg"
+                  alt={`${personalInfo.name} 프로필 사진`}
+                  fill
+                  priority
+                  className="object-cover object-[50%_20%]"
+                  sizes="(max-width: 640px) 224px, (max-width: 1024px) 256px, 288px"
+                />
+              </div>
+            </div>
+          </motion.div>
+
         </div>
+      </div>
 
-        <p className="text-muted-foreground text-lg leading-relaxed mb-10 whitespace-pre-line max-w-xl mx-auto">
-          {personalInfo.bio}
-        </p>
-
-        <div className="flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="#projects"
-            className={cn(buttonVariants({ size: "lg" }), "rounded-full font-medium")}
-          >
-            프로젝트 보기
-          </a>
-          <a
-            href="#contact"
-            className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "rounded-full font-medium border-border text-muted-foreground hover:text-foreground"
-            )}
-          >
-            연락하기
-          </a>
-          <a
-            href={personalInfo.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              buttonVariants({ variant: "ghost", size: "lg" }),
-              "rounded-full font-medium text-muted-foreground hover:text-foreground gap-2"
-            )}
-          >
-            <GitHubIcon />
-            GitHub
-          </a>
-        </div>
-      </motion.div>
-
+      {/* 스크롤 인디케이터 */}
       <motion.div
         className="absolute bottom-10 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}

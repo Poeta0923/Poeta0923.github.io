@@ -18,7 +18,7 @@ export const skillCategories = [
   },
   {
     name: "Backend",
-    skills: ["NestJS", "Node.js", "Express", "FastAPI", "Prisma"],
+    skills: ["NestJS", "Node.js", "Express", "Prisma"],
   },
   {
     name: "Database / Infra",
