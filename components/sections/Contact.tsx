@@ -40,7 +40,7 @@ export default function Contact() {
           <p className="font-mono text-xs text-primary mb-1 tracking-wider">05. Contact</p>
           <h2 className="text-3xl font-bold text-foreground mb-4">연락하기</h2>
           <p className="text-muted-foreground text-base leading-relaxed mb-10">
-            새로운 기회나 협업에 대해 이야기하고 싶으시면 언제든지 연락 주세요.
+            현재 새로운 기회를 찾고 있습니다. 채용 제안이나 협업 문의는 언제든 환영합니다.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-3">
