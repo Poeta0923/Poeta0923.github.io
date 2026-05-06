@@ -7,7 +7,7 @@ export const personalInfo = {
   university: "가천대학교",
   department: "컴퓨터공학부",
   enrollYear: 2021,
-  roles: ["풀스택 개발자", "TypeScript 개발자", "Next.js 개발자", "NestJS 개발자"],
+  roles: ["백엔드 개발자", "TypeScript 개발자", "NestJS 개발자"],
   bio: "TypeScript·Next.js·NestJS 기반의 현대적 웹 개발을 추구하며,\n실시간 통신·AI 통합·클라우드 아키텍처를 탐구합니다.",
   interests: ["실시간 통신", "AI 통합", "클라우드 아키텍처"],
 };

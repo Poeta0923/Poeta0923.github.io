@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "김광수 | 풀스택 개발자",
+  title: "김광수 | 백엔드 개발자",
   description:
-    "TypeScript·Next.js·NestJS 기반의 풀스택 개발자 김광수의 포트폴리오입니다.",
+    "TypeScript·Next.js·NestJS 기반의 백엔드 개발자 김광수의 포트폴리오입니다.",
   metadataBase: new URL("https://poeta0923.github.io"),
   openGraph: {
-    title: "김광수 | 풀스택 개발자",
+    title: "김광수 | 백엔드 개발자",
     description:
-      "TypeScript·Next.js·NestJS 기반의 풀스택 개발자 김광수의 포트폴리오입니다.",
+      "TypeScript·Next.js·NestJS 기반의 백엔드 개발자 김광수의 포트폴리오입니다.",
     url: "https://poeta0923.github.io",
     siteName: "김광수 포트폴리오",
     images: [{ url: "/OG_IMG.png", width: 1200, height: 630, alt: "김광수 포트폴리오" }],
