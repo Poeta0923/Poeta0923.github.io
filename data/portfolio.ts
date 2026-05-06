@@ -3,6 +3,7 @@ export const personalInfo = {
   nameEn: "Kwangsoo Kim",
   email: "gimgwangsu0@gmail.com",
   github: "https://github.com/Poeta0923",
+  linkedin: "https://www.linkedin.com/in/광수-김-100865408",
   university: "가천대학교",
   department: "컴퓨터공학부",
   enrollYear: 2021,
@@ -27,10 +28,6 @@ export const skillCategories = [
   {
     name: "Cloud & DevOps",
     skills: ["AWS", "Amazon S3", "Amazon EC2", "Amazon ECS", "Amazon RDS", "Docker", "GitHub Actions"],
-  },
-  {
-    name: "Blockchain & Web3",
-    skills: ["Ethereum", "IPFS", "Truffle"],
   },
   {
     name: "Tools",
@@ -63,7 +60,7 @@ export const experiences: Experience[] = [
       "WebSocket 기반 실시간 채팅 구현",
       "입력 검증 및 보안 처리",
     ],
-    techStack: ["Node.js", "Express", "WebSocket", "MySQL", "React Native"],
+    techStack: ["Node.js", "Express", "WebSocket", "MySQL"],
   },
   {
     organization: "가천대학교",
@@ -125,7 +122,7 @@ export const projects: Project[] = [
       "WebSocket 기반 실시간 채팅 구현",
       "입력 검증 및 보안 처리",
     ],
-    techStack: ["Node.js", "Express", "WebSocket", "MySQL", "React Native"],
+    techStack: ["Node.js", "Express", "WebSocket", "MySQL"],
     github: "https://github.com/Poeta0923/team-ONE",
     featured: false,
   },

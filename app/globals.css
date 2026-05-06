@@ -96,6 +96,42 @@
   }
 }
 
+/* 인쇄(PDF) 스타일 */
+@media print {
+  :root {
+    --background: #ffffff;
+    --foreground: #111111;
+    --card: #f5f5f5;
+    --card-foreground: #111111;
+    --muted: #eeeeee;
+    --muted-foreground: #555555;
+    --border: rgba(0, 0, 0, 0.12);
+    --primary: #4f46e5;
+    --primary-foreground: #ffffff;
+  }
+
+  @page {
+    margin: 1.5cm;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  /* 프로필 사진 링 효과 제거 */
+  .blur-xl {
+    display: none;
+  }
+
+  section {
+    min-height: unset !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    break-inside: avoid;
+  }
+}
+
 /* 커스텀 스크롤바 */
 ::-webkit-scrollbar {
   width: 5px;
