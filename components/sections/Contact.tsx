@@ -31,7 +31,7 @@ export default function Contact() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-xs text-primary mb-1 tracking-wider">04. Contact</p>
+          <p className="font-mono text-xs text-primary mb-1 tracking-wider">05. Contact</p>
           <h2 className="text-3xl font-bold text-foreground mb-4">연락하기</h2>
           <p className="text-muted-foreground text-base leading-relaxed mb-10">
             새로운 기회나 협업에 대해 이야기하고 싶으시면 언제든지 연락 주세요.

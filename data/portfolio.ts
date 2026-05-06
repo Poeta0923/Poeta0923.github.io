@@ -30,6 +30,48 @@ export const skillCategories = [
   },
 ];
 
+export type Experience = {
+  organization: string;
+  type: string;
+  role: string;
+  period: string;
+  projectTitle: string;
+  description: string;
+  highlights: string[];
+  techStack: string[];
+};
+
+export const experiences: Experience[] = [
+  {
+    organization: "가천대학교",
+    type: "심화전공프로젝트",
+    role: "백엔드 개발자",
+    period: "2025.09 – 2025.12",
+    projectTitle: "team-ONE",
+    description: "공모전·사이드 프로젝트 팀원 모집 플랫폼. AI 추천 알고리즘과 실시간 채팅으로 적합한 팀원을 연결합니다.",
+    highlights: [
+      "HTTP·WebSocket 공통 JWT 인증 미들웨어 설계",
+      "DB 스키마 및 테이블 관계 모델링",
+      "WebSocket 기반 실시간 채팅 구현",
+      "입력 검증 및 보안 처리",
+    ],
+    techStack: ["Node.js", "Express", "WebSocket", "MySQL", "React Native"],
+  },
+  {
+    organization: "가천대학교",
+    type: "종합프로젝트",
+    role: "풀스택 개발자",
+    period: "2025.03 – 2025.06",
+    projectTitle: "bookCalendar-admin",
+    description: "도서 일정을 관리하는 어드민 대시보드 웹 애플리케이션.",
+    highlights: [
+      "서버사이드 렌더링(SSR) 기반 관리자 UI 구현",
+      "MariaDB 연동 도서 데이터 CRUD",
+    ],
+    techStack: ["Express.js", "EJS", "MariaDB"],
+  },
+];
+
 export type Project = {
   title: string;
   description: string;

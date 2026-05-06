@@ -17,7 +17,7 @@ export default function Projects() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-mono text-xs text-primary mb-1 tracking-wider">03. Projects</p>
+          <p className="font-mono text-xs text-primary mb-1 tracking-wider">04. Projects</p>
           <h2 className="text-3xl font-bold text-foreground mb-10">프로젝트</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
