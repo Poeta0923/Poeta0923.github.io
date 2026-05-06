@@ -14,19 +14,27 @@ export const personalInfo = {
 export const skillCategories = [
   {
     name: "Frontend",
-    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "TanStack Query"],
+    skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "Next.js", "Tailwind CSS", "TanStack Query", "Jotai"],
   },
   {
     name: "Backend",
-    skills: ["NestJS", "Node.js", "Express", "Prisma"],
+    skills: ["NestJS", "Express.js", "Socket.io", "Swagger", "JWT"],
   },
   {
-    name: "Database / Infra",
-    skills: ["PostgreSQL", "Redis", "MySQL", "MariaDB", "Docker", "AWS S3"],
+    name: "Database & Cache",
+    skills: ["PostgreSQL", "MySQL", "Redis", "Prisma"],
   },
   {
-    name: "AI / 기타",
-    skills: ["Claude API", "Socket.io", "GitHub Actions CI/CD"],
+    name: "Cloud & DevOps",
+    skills: ["AWS", "Amazon S3", "Amazon EC2", "Amazon ECS", "Amazon RDS", "Docker", "GitHub Actions"],
+  },
+  {
+    name: "Blockchain & Web3",
+    skills: ["Ethereum", "IPFS", "Truffle"],
+  },
+  {
+    name: "Tools",
+    skills: ["Postman", "Sentry", "Git", "GitHub", "VS Code", "Cursor"],
   },
 ];
 
