@@ -19,11 +19,6 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-const DownloadIcon = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3" />
-  </svg>
-);
 
 export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -83,7 +78,7 @@ export default function Hero() {
               {personalInfo.bio}
             </p>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 print:hidden">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
               <a
                 href="#projects"
                 className={cn(buttonVariants({ size: "lg" }), "rounded-full font-medium")}
@@ -123,16 +118,6 @@ export default function Hero() {
                 <LinkedInIcon />
                 LinkedIn
               </a>
-              <button
-                onClick={() => window.print()}
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: "lg" }),
-                  "rounded-full font-medium text-muted-foreground hover:text-foreground gap-2 cursor-pointer"
-                )}
-              >
-                <DownloadIcon />
-                PDF 다운로드
-              </button>
             </div>
           </motion.div>
 
@@ -167,7 +152,7 @@ export default function Hero() {
 
       {/* 스크롤 인디케이터 */}
       <motion.div
-        className="absolute bottom-10 flex flex-col items-center gap-2 print:hidden"
+        className="absolute bottom-10 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 0.6 }}
