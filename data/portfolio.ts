@@ -11,7 +11,7 @@ export const personalInfo = {
   bio: "TypeScript·Next.js·NestJS 기반의 현대적 웹 개발을 추구하며,\n실시간 통신·AI 통합·클라우드 아키텍처를 탐구합니다.",
   interests: ["실시간 통신", "AI 통합", "클라우드 아키텍처"],
   // 한글·대괄호·공백이 포함되어 있어 URL 인코딩된 경로 사용
-  resumePath: "/%5B%ED%92%80%EC%8A%A4%ED%83%9D%5D%20%EA%B9%80%EA%B4%91%EC%88%98.pdf",
+  resumePath: "/%5B%EB%B0%B1%EC%97%94%EB%93%9C%5D%20%EA%B9%80%EA%B4%91%EC%88%98.pdf",
   resumeFilename: "[백엔드] 김광수.pdf",
 };
 
