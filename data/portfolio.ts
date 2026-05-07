@@ -12,7 +12,7 @@ export const personalInfo = {
   interests: ["실시간 통신", "AI 통합", "클라우드 아키텍처"],
   // 한글·대괄호·공백이 포함되어 있어 URL 인코딩된 경로 사용
   resumePath: "/%5B%ED%92%80%EC%8A%A4%ED%83%9D%5D%20%EA%B9%80%EA%B4%91%EC%88%98.pdf",
-  resumeFilename: "[풀스택] 김광수.pdf",
+  resumeFilename: "[백엔드] 김광수.pdf",
 };
 
 export const skillCategories = [
