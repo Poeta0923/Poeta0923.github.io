@@ -10,6 +10,9 @@ export const personalInfo = {
   roles: ["백엔드 개발자", "TypeScript 개발자", "NestJS 개발자"],
   bio: "TypeScript·Next.js·NestJS 기반의 현대적 웹 개발을 추구하며,\n실시간 통신·AI 통합·클라우드 아키텍처를 탐구합니다.",
   interests: ["실시간 통신", "AI 통합", "클라우드 아키텍처"],
+  // 한글·대괄호·공백이 포함되어 있어 URL 인코딩된 경로 사용
+  resumePath: "/%5B%ED%92%80%EC%8A%A4%ED%83%9D%5D%20%EA%B9%80%EA%B4%91%EC%88%98.pdf",
+  resumeFilename: "[풀스택] 김광수.pdf",
 };
 
 export const skillCategories = [
@@ -89,6 +92,7 @@ export type Project = {
   highlights: string[];
   techStack: string[];
   github: string;
+  liveUrl?: string;
   featured?: boolean;
 };
 
@@ -107,6 +111,7 @@ export const projects: Project[] = [
     ],
     techStack: ["Next.js 15", "NestJS 11", "PostgreSQL", "Redis", "Socket.io", "AWS S3", "Claude API", "Docker"],
     github: "https://github.com/Poeta0923/talkertive-chat-app",
+    liveUrl: "https://talkertive.co.kr/",
     featured: true,
   },
   {

@@ -8,8 +8,16 @@ const GitHubIcon = () => (
   </svg>
 );
 
+const ExternalLinkIcon = () => (
+  <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+);
+
 export default function ProjectCard({ project }: { project: Project }) {
-  const { title, description, longDescription, type, role, highlights, techStack, github } = project;
+  const { title, description, longDescription, type, role, highlights, techStack, github, liveUrl } = project;
 
   return (
     <Card className="h-full border-border/50 bg-card hover:border-primary/30 transition-colors group">
@@ -20,15 +28,28 @@ export default function ProjectCard({ project }: { project: Project }) {
             <h3 className="text-lg font-bold text-foreground truncate">{title}</h3>
             <p className="text-sm text-muted-foreground mt-0.5">{description}</p>
           </div>
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 text-muted-foreground hover:text-foreground transition-colors mt-0.5"
-            aria-label="GitHub 저장소 바로가기"
-          >
-            <GitHubIcon />
-          </a>
+          <div className="flex-shrink-0 flex items-center gap-2 mt-0.5">
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="배포된 사이트 바로가기"
+              >
+                <ExternalLinkIcon />
+              </a>
+            )}
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="GitHub 저장소 바로가기"
+            >
+              <GitHubIcon />
+            </a>
+          </div>
         </div>
       </CardHeader>
 
